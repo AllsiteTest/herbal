@@ -626,8 +626,8 @@
         <div class="header-upper">
             <div class="container">
                 <ul class="top-left">
-                    <li><i class="fa fa-phone"></i>SUPPORT NUMBER:<a href="tel:+919341098599"> +919341098599 </a></li>
-                    <li><i class="fa fa-whatsapp"></i> What's App Number: <a>+919341098599</a></li>
+                    <li><i class="fa fa-phone"></i>SUPPORT NUMBER:<a href="tel:+919341098599">+9190007924656 </a></li>
+                    <li><i class="fa fa-whatsapp"></i> What's App Number: <a>+9190007924656</a></li>
                 </ul>
             </div>
         </div>
@@ -744,7 +744,7 @@
                             <img src="images/support.png" alt="Customer Support">
                         </div>
                         <div class="support-label">Customer Support No:</div>
-                        <div class="support-number">+919341098599</div>
+                        <div class="support-number">+9190007924656</div>
                     </div>
                 </div>
 
@@ -797,19 +797,21 @@
 
     <!-- Footer -->
     <div class="footer-contact">
-        <i class="fa fa-phone"></i> Head office : +919341098599
+        <i class="fa fa-phone"></i> Head office :+9190007924656
     </div>
 
     <div class="copyright">
-        Copyright © 2025-2026 All Right Reserved
+        Copyright © 2025-2026 All Right Reserved By Herbal Ayurveda Pvt Ltd
     </div>
 
-
+    <div id="myButton"></div>
+    <input name="ctl00$HFSupportNumber" value="+9190007924656" id="HFSupportNumber" type="hidden" />
 
     <!-- Scripts -->
     <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+    <script src="plugins/floating-wpp/floating-wpp.js"></script>
 
 
     <script type="text/javascript">
@@ -846,9 +848,9 @@
                 cancelButtonColor: '#007bff'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.open(`https://wa.me/919341098599?text=${encodeURIComponent(message)}`, '_blank');
+                    window.open(`https://wa.me/9190007924656?text=${encodeURIComponent(message)}`, '_blank');
                 } else if (result.dismiss === Swal.DismissReason.cancel) {
-                    window.location.href = 'tel:+919341098599';
+                    window.location.href = 'tel:+9190007924656';
                 }
             });
         }
@@ -862,6 +864,22 @@
         window.onload = function() {
             getPhoneFromURL();
         };
+
+        // Initialize floating WhatsApp
+        $(function () {
+            $('#myButton').floatingWhatsApp({
+                phone: document.getElementById('HFSupportNumber').value,
+                popupMessage: 'Hello, How I help you?',
+                message: "",
+                showPopup: true,
+                showOnIE: false,
+                position: 'right',
+                headerTitle: 'Welcome to our Website ',
+                headerColor: 'green',
+                backgroundColor: 'green',
+                size: '60px'
+            });
+        });
 
 
 
@@ -893,11 +911,11 @@
 
         // Support functions
         function showHelplineInfo() {
-            alert('📞 Helpline Number: +91 9341098599\n⏰ Available 24/7\n💬 For immediate assistance');
+            alert('📞 Helpline Number: +91 90007924656\n⏰ Available 24/7\n💬 For immediate assistance');
         }
 
         function showCustomerSupport() {
-            alert('👨‍💼 Customer Support: +91 9341098599\n⏰ Mon-Sat 9AM-6PM\n📧 Email: support@herballuckydraw.com');
+            alert('👨‍💼 Customer Support: +91 90007924656\n⏰ Mon-Sat 9AM-6PM\n📧 Email: support@herballuckydraw.com');
         }
     </script>
 
