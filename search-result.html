@@ -403,14 +403,36 @@
         /* Arrow Section */
         .arrow-section {
             text-align: center;
-            padding: 15px;
+            padding: 30px;
             background: #f8f9fa;
+            position: relative;
         }
 
-        .arrow-down {
-            font-size: 35px;
-            color: #e67e22;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        .arrow-gif {
+            max-width: 100px;
+            height: auto;
+            display: inline-block;
+        }
+
+        /* Mobile responsiveness for arrow */
+        @media (max-width: 768px) {
+            .arrow-gif {
+                max-width: 80px;
+            }
+
+            .arrow-section {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .arrow-gif {
+                max-width: 70px;
+            }
+
+            .arrow-section {
+                padding: 20px;
+            }
         }
 
         /* Process Buttons */
@@ -737,7 +759,7 @@
                             <img src="images/help.png" alt="Helpline">
                         </div>
                         <div class="support-label">Helpline No:</div>
-                        <div class="support-number">18005725708</div>
+                        <div class="support-number">+919163571821</div>
                     </div>
                     <div class="support-item" onclick="showCustomerSupport()">
                         <div class="support-icon customer-support-icon">
@@ -750,7 +772,7 @@
 
                 <!-- Arrow pointing down -->
                 <div class="arrow-section">
-                    <div class="arrow-down">⬇</div>
+                    <img src="./images/arrow.gif" alt="Arrow pointing down" class="arrow-gif">
                 </div>
 
                 <!-- Process buttons -->
