@@ -79,18 +79,19 @@
     </div>
     <!--page title end -->
 <script>
-function checkphonenameAvailability() {
-$("#loaderIcon").show();
-jQuery.ajax({
-url: "check/mobile_check.php",
-data:'contactnumber='+$("#contactnumber").val(),
-type: "POST",
-success:function(data){
-$("#phone-availability-status").html(data);
-$("#loaderIcon").hide();
-},
-error:function (){}
-});
+// Phone search function (same as index.html)
+function searchPhone(event) {
+    event.preventDefault();
+    const phoneInput = document.getElementById('phoneInput');
+    const phoneNumber = phoneInput.value.trim();
+
+    if (phoneNumber.length >= 10) {
+        // Redirect to search result page with phone number
+        window.location.href = `search-result.html?phone=${phoneNumber}`;
+    } else {
+        alert('Please enter a valid 10-digit phone number');
+    }
+    return false;
 }
 </script>
     <!-- feature-section -->
@@ -108,19 +109,15 @@ error:function (){}
                 <div class="row">
 				
 				 
-				 <form method="post" >
+				  <form method="post" onsubmit="return searchPhone(event)">
 					  <div class="col-md-9">
 					    <div class="check-prize-data-2">
-                           
-						   <input type="number" name="contactnumber" required class="form-control" placeholder="Enter phone Number" minlength="10"  maxlength="10" id="contactnumber"  />
-           <span id="phone-availability-status"></span> 
-				 
-						   
+                           <input type="number" name="phone" id="phoneInput" class="form-control" placeholder="Enter phone Number" required />
                         </div>
 					   </div>
 					   <div class="col-md-3">
 						<div class="check-prize-data-3">
-                            <input type="submit" name="submit" value="Submit" class="btn-one style-one radi" style="color:White;" onclick="checkphonenameAvailability()"  />	
+                            <input type="submit" name="submit" value="Submit" class="btn-one style-one radi" style="color:White;" />
 						</div>
 					</div>
 					</form>
